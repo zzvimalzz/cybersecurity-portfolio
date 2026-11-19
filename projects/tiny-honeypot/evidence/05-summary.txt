@@ -1,0 +1,10 @@
+$ python3 honeypot.py summary
+21 events from 1 source address(es)
+
+127.0.0.1: 2 ssh, 19 web
+  touched both services    MITRE ATT&CK T1595 active scanning
+  8 login attempts    MITRE ATT&CK T1110 brute force
+  usernames tried: admin x2, root x1, test x1
+  paths requested: /login x8, / x5, /nmaplowercheck1795100407 x1, /sdk x1
+  user agents: Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html); curl/8.21.0
+

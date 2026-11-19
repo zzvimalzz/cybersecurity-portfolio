@@ -1,0 +1,24 @@
+lab> docker compose --project-name wqe7002-lab exec -w /work workbench sh tools/run_experiment.sh
+== 1/3 start capture (Scapy run only) ==
+capturing workbench traffic to /evidence/experiment.pcap
+== 2/3 Scapy scan ==
+wrote /evidence/result.json: open=4, closed=0, filtered-icmp-unreachable=0, filtered-or-no-response=0; 4 SYN, 4 RST
+capture stopped
+== 3/3 Nmap validation (separate from the PCAP) ==
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-11-06 10:16 UTC
+Nmap scan report for 172.28.70.10
+Host is up, received arp-response (0.000088s latency).
+
+PORT     STATE SERVICE    REASON
+22/tcp   open  ssh        syn-ack ttl 64
+80/tcp   open  http       syn-ack ttl 64
+443/tcp  open  https      syn-ack ttl 64
+8080/tcp open  http-proxy syn-ack ttl 64
+MAC Address: [redacted] (Unknown)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.30 seconds
+6c43bad92cd4058046ff18fb54e53c551ab7221444cf5696685e5a8225414914  scope.json
+8e18de60c70469e849b5ea46b590daaca9b0242478926000b2a12ac49c63b57f  result.json
+a6c6f8187875d3a97e6efc6357394dab04a381bce4dce66bd3059c46a1bfc2c7  experiment.pcap
+cfd770369a40c08606b48b1233d1a5cd00af036a01fe84e44a5c3bb7f7578721  nmap-validation.xml
+done. Copy /evidence out of the lab before running reset.

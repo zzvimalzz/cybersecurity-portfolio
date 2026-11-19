@@ -1,0 +1,209 @@
+---
+layout: default
+---
+{% assign site_data = site.data.site %}
+{% assign profile = site_data.profile %}
+{% assign contact = site_data.contact %}
+{% assign scene = site_data.scene %}
+{% assign projects = site.pages | where: "layout", "project" | sort: "order" %}
+
+{% assign lede = profile.lede %}
+{% for chip in profile.chips %}
+  {% capture chip_html %}<span class="chip">{{ chip }}</span>{% endcapture %}
+  {% assign lede = lede | replace: chip, chip_html %}
+{% endfor %}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap" data-enter>
+    <p class="hero-status mono">{{ profile.status }}</p>
+    {% assign words = profile.headline | split: " " %}
+    <h1 id="hero-title">{% for word in words %}<span>{{ word }}</span>{% unless forloop.last %}&#32;{% endunless %}{% endfor %}</h1>
+    <p class="hero-lede">{{ lede }}</p>
+    <p class="hero-actions">
+      <a class="button" href="#work">See the work</a>
+      <a class="button button-ghost" href="#contact">Email me</a>
+    </p>
+  </div>
+</section>
+
+<div class="scene" aria-hidden="true">
+  <div class="scene-stage">
+    <ul class="floaters">
+      {% for item in scene.items %}
+      <li class="floater" data-tile="{{ item.tile }}"><span><img src="{{ '/assets/images/' | append: item.src | relative_url }}" alt="" width="96" height="96" decoding="async"></span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<section id="about" class="section" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="split">
+      <h2 id="about-title">About me</h2>
+      <div class="about-copy">{{ site_data.about | markdownify }}</div>
+    </div>
+    <dl class="stats">
+      {% for stat in profile.stats %}
+      <div>
+        <dt class="mono">{{ stat.label }}</dt>
+        <dd>{{ stat.value }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </div>
+</section>
+
+<section id="skills" class="section" aria-labelledby="skills-title">
+  <div class="wrap">
+    <h2 id="skills-title">Technical skills</h2>
+    <ul class="skills">
+      {% for skill in site.data.skills.focus %}
+      <li id="skill-{{ skill.id }}" class="skill">
+        <div class="icons" aria-hidden="true">
+          {% for icon in skill.icons %}<img src="{{ '/assets/images/icons/' | append: icon | append: '.svg' | relative_url }}" alt="" width="36" height="36">{% endfor %}
+        </div>
+        <h3>{{ skill.name }}</h3>
+        <p class="skill-proof">
+          {% for slug in skill.evidence %}
+          {% assign project = projects | where_exp: "p", "p.url contains slug" | first %}
+          <a href="{{ project.url | relative_url }}">{{ project.title }}</a>{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+          {{ skill.note }}
+        </p>
+        {% case skill.level %}
+          {% when "beginner" %}{% assign level_label = "Beginner" %}
+          {% when "working" %}{% assign level_label = "Working knowledge" %}
+          {% when "confident" %}{% assign level_label = "Confident" %}
+        {% endcase %}
+        <span class="level" data-level="{{ skill.level }}"><span class="level-label">{{ level_label }}</span><span class="level-bars" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="stack">
+      <p class="legend mono" aria-label="Level key">
+        <span class="level" data-level="beginner"><span class="level-label">Beginner</span><span class="level-bars" aria-hidden="true"><i></i><i></i><i></i></span></span>
+        <span class="level" data-level="working"><span class="level-label">Working knowledge</span><span class="level-bars" aria-hidden="true"><i></i><i></i><i></i></span></span>
+        <span class="level" data-level="confident"><span class="level-label">Confident</span><span class="level-bars" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      </p>
+      {% for group in site.data.skills.stack %}
+      <div class="stack-group">
+        <h3>{{ group.group }}</h3>
+        <ul class="stack-list">
+          {% for item in group.items %}
+          {% case item.level %}{% when "beginner" %}{% assign item_label = "Beginner" %}{% when "working" %}{% assign item_label = "Working knowledge" %}{% when "confident" %}{% assign item_label = "Confident" %}{% endcase %}
+          <li class="pill" data-level="{{ item.level }}">{{ item.name }}<span class="level-bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="sr">, {{ item_label }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="training" class="section" aria-labelledby="training-title">
+  <div class="wrap">
+    <h2 id="training-title">Certifications and training</h2>
+    <ul class="training">
+      {% for cert in site_data.certifications %}
+      <li class="training-row">
+        <span class="icons" aria-hidden="true">{% if cert.icon %}{% assign ext = cert.ext | default: "svg" %}<img{% if cert.bleed %} class="bleed"{% endif %} src="{{ '/assets/images/icons/' | append: cert.icon | append: '.' | append: ext | relative_url }}" alt="" width="40" height="40">{% endif %}</span>
+        <h3>{{ cert.name }}</h3>
+        {% if cert.status_text %}
+        <p class="training-status mono">{{ cert.status_text }}</p>
+        {% elsif cert.status == "earned" %}
+        <p class="training-status mono">Earned {{ cert.date }}</p>
+        {% elsif cert.status == "practice" %}
+        <p class="training-status mono">Practice platform</p>
+        {% else %}
+        <p class="training-status mono">In progress, target {{ cert.target }}</p>
+        {% endif %}
+        <p class="training-link">{% if cert.url %}<a class="draw-link mono" href="{{ cert.url }}">Verify ↗</a>{% endif %}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="experience" class="section" aria-labelledby="experience-title">
+  <div class="wrap">
+    <h2 id="experience-title">Work experience</h2>
+    <ol class="timeline">
+      {% for job in site_data.experience %}
+      <li class="job">
+        <p class="job-when mono">{{ job.when }}</p>
+        <div class="job-body">
+          <h3>{{ job.role }}</h3>
+          <p class="job-org">{% if job.url %}<a class="draw-link" href="{{ job.url }}" rel="noopener">{{ job.org }} ↗</a>{% else %}{{ job.org }}{% endif %}</p>
+          <p>{{ job.detail }}</p>
+          {% if job.tags %}<ul class="job-tags">{% for tag in job.tags %}<li><span class="chip">{{ tag }}</span></li>{% endfor %}</ul>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section id="work" class="section" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="work-title">Projects</h2>
+      <p class="note mono">{{ profile.authorisation }}</p>
+    </div>
+    <ul class="cases">
+      {% for project in projects %}
+      {% capture marker %}<em>{{ project.shot_highlight }}</em>{% endcapture %}
+      <li>
+        <article class="case">
+          <div class="case-meta">
+            <h3 class="case-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+            <p class="case-order mono">{{ project.order | prepend: "0" }}</p>
+          </div>
+          {% if project.shot %}<div class="shot"><pre><code>{{ project.shot | escape | replace: project.shot_highlight, marker }}</code></pre></div>{% endif %}
+          <ul class="case-links mono">
+            {% if project.open %}<li><a class="draw-link" href="{{ project.url | append: project.open | relative_url }}">Open the tool</a></li>{% endif %}
+            {% if project.download %}<li><a class="draw-link" href="{{ project.url | append: project.download | relative_url }}" download>Download {{ project.download }}</a></li>{% endif %}
+            <li><a class="draw-link" href="{{ contact.github }}/cybersecurity-portfolio/tree/main{{ project.url }}">Source ↗</a></li>
+          </ul>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="journey" class="section" aria-labelledby="journey-title">
+  <div class="wrap">
+    <h2 id="journey-title">Learning journey</h2>
+    <div class="journey-grid">
+      {% for part in site_data.journey %}
+      <article class="panel">
+        <p class="panel-index mono">0{{ forloop.index }}</p>
+        <h3>{{ part.title }}</h3>
+        <div class="panel-body">{{ part.body | markdownify }}</div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="career" class="section" aria-labelledby="career-title">
+  <div class="wrap">
+    <h2 id="career-title">Career objective</h2>
+    <div class="statement">{{ site_data.career.statement | markdownify }}</div>
+    <ol class="next" aria-label="Next steps">
+      {% for step in site_data.career.steps %}<li>{{ step }}</li>{% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section id="contact" class="section closing" aria-labelledby="contact-title">
+  <div class="wrap">
+    <h2 id="contact-title">Contact information</h2>
+    {% if contact.email %}<a class="mail" href="mailto:{{ contact.email }}">{{ contact.email }}</a>{% endif %}
+    <div class="actions">
+      {% if contact.email %}<button class="button" type="button" data-copy="{{ contact.email }}" hidden>Copy email</button>{% endif %}
+      <a class="button button-ghost" href="{{ contact.github }}">GitHub ↗</a>
+      {% if contact.linkedin %}<a class="button button-ghost" href="{{ contact.linkedin }}">LinkedIn ↗</a>{% endif %}
+    </div>
+    <p class="mono copy-status" role="status" aria-live="polite" data-copied></p>
+  </div>
+</section>

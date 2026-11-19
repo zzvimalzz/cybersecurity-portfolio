@@ -1,0 +1,19 @@
+$ curl -s -i http://127.0.0.1:8081/ | head -n 8
+HTTP/1.1 200 OK
+Server: Apache/2.4.41 (Ubuntu)
+Content-Type: text/html
+Content-Length: 261
+Connection: close
+
+<!doctype html><html><head><title>Staff portal</title></head><body>
+<h1>Staff portal</h1><form method="post" action="/login">
+
+$ for u in admin root test guest oracle admin pi ubuntu; do curl -s -o /dev/null -w '%{http_code} ' -d "u=$u&p=guess1" http://127.0.0.1:8081/login; done; echo
+401 401 401 401 401 401 401 401 
+
+$ curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8081/admin
+404
+
+$ printf 'SSH-2.0-test-client\r\n' | timeout 3 nc 127.0.0.1 2222
+SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.6
+

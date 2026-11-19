@@ -1,0 +1,21 @@
+$ python3 -c "rdpcap('/evidence/experiment.pcap') ... print(p.summary())"
+19 packets in /evidence/experiment.pcap
+ 1 + 0.0000s  Ether / ARP who has 172.28.70.10 says 172.28.70.2
+ 2 + 0.0002s  Ether / ARP who has 172.28.70.10 says 172.28.70.2
+ 3 + 0.0002s  Ether / ARP is at [redacted] says 172.28.70.10
+ 4 + 0.0236s  Ether / IP / TCP 172.28.70.2:40000 > 172.28.70.10:ssh S
+ 5 + 0.0237s  Ether / IP / TCP 172.28.70.10:ssh > 172.28.70.2:40000 SA
+ 6 + 0.0246s  Ether / IP / TCP 172.28.70.2:40000 > 172.28.70.10:ssh R
+ 7 + 0.0784s  Ether / IP / TCP 172.28.70.2:40000 > 172.28.70.10:ssh R
+ 8 + 0.1295s  Ether / IP / TCP 172.28.70.2:40001 > 172.28.70.10:http S
+ 9 + 0.1296s  Ether / IP / TCP 172.28.70.10:http > 172.28.70.2:40001 SA
+10 + 0.1296s  Ether / IP / TCP 172.28.70.2:40001 > 172.28.70.10:http R
+11 + 0.1806s  Ether / IP / TCP 172.28.70.2:40001 > 172.28.70.10:http R
+12 + 0.2319s  Ether / IP / TCP 172.28.70.2:40002 > 172.28.70.10:https S
+13 + 0.2321s  Ether / IP / TCP 172.28.70.10:https > 172.28.70.2:40002 SA
+14 + 0.2321s  Ether / IP / TCP 172.28.70.2:40002 > 172.28.70.10:https R
+15 + 0.2829s  Ether / IP / TCP 172.28.70.2:40002 > 172.28.70.10:https R
+16 + 0.3341s  Ether / IP / TCP 172.28.70.2:40003 > 172.28.70.10:http_alt S
+17 + 0.3342s  Ether / IP / TCP 172.28.70.10:http_alt > 172.28.70.2:40003 SA
+18 + 0.3342s  Ether / IP / TCP 172.28.70.2:40003 > 172.28.70.10:http_alt R
+19 + 0.3860s  Ether / IP / TCP 172.28.70.2:40003 > 172.28.70.10:http_alt R

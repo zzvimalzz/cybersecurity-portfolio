@@ -1,0 +1,21 @@
+{"ts": "2026-11-19T15:00:04+00:00", "service": "ssh", "src": "127.0.0.1", "client": ""}
+{"ts": "2026-11-19T15:00:07+00:00", "service": "web", "src": "127.0.0.1", "method": "", "path": "", "agent": ""}
+{"ts": "2026-11-19T15:00:07+00:00", "service": "web", "src": "127.0.0.1", "method": "GET", "path": "/", "agent": ""}
+{"ts": "2026-11-19T15:00:07+00:00", "service": "web", "src": "127.0.0.1", "method": "GET", "path": "/nmaplowercheck1795100407", "agent": "Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)"}
+{"ts": "2026-11-19T15:00:07+00:00", "service": "web", "src": "127.0.0.1", "method": "POST", "path": "/sdk", "agent": "Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)"}
+{"ts": "2026-11-19T15:00:07+00:00", "service": "web", "src": "127.0.0.1", "method": "GET", "path": "/", "agent": ""}
+{"ts": "2026-11-19T15:00:07+00:00", "service": "web", "src": "127.0.0.1", "method": "GET", "path": "/HNAP1", "agent": "Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)"}
+{"ts": "2026-11-19T15:00:07+00:00", "service": "web", "src": "127.0.0.1", "method": "GET", "path": "/evox/about", "agent": "Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)"}
+{"ts": "2026-11-19T15:00:07+00:00", "service": "web", "src": "127.0.0.1", "method": "GET", "path": "/", "agent": ""}
+{"ts": "2026-11-19T15:00:07+00:00", "service": "web", "src": "127.0.0.1", "method": "GET", "path": "/", "agent": ""}
+{"ts": "2026-11-19T15:00:11+00:00", "service": "web", "src": "127.0.0.1", "method": "GET", "path": "/", "agent": "curl/8.21.0"}
+{"ts": "2026-11-19T15:00:11+00:00", "service": "web", "src": "127.0.0.1", "method": "POST", "path": "/login", "agent": "curl/8.21.0", "user": "admin", "secret_len": 6, "secret_hash": "61082d3a"}
+{"ts": "2026-11-19T15:00:11+00:00", "service": "web", "src": "127.0.0.1", "method": "POST", "path": "/login", "agent": "curl/8.21.0", "user": "root", "secret_len": 6, "secret_hash": "61082d3a"}
+{"ts": "2026-11-19T15:00:11+00:00", "service": "web", "src": "127.0.0.1", "method": "POST", "path": "/login", "agent": "curl/8.21.0", "user": "test", "secret_len": 6, "secret_hash": "61082d3a"}
+{"ts": "2026-11-19T15:00:11+00:00", "service": "web", "src": "127.0.0.1", "method": "POST", "path": "/login", "agent": "curl/8.21.0", "user": "guest", "secret_len": 6, "secret_hash": "61082d3a"}
+{"ts": "2026-11-19T15:00:11+00:00", "service": "web", "src": "127.0.0.1", "method": "POST", "path": "/login", "agent": "curl/8.21.0", "user": "oracle", "secret_len": 6, "secret_hash": "61082d3a"}
+{"ts": "2026-11-19T15:00:11+00:00", "service": "web", "src": "127.0.0.1", "method": "POST", "path": "/login", "agent": "curl/8.21.0", "user": "admin", "secret_len": 6, "secret_hash": "61082d3a"}
+{"ts": "2026-11-19T15:00:11+00:00", "service": "web", "src": "127.0.0.1", "method": "POST", "path": "/login", "agent": "curl/8.21.0", "user": "pi", "secret_len": 6, "secret_hash": "61082d3a"}
+{"ts": "2026-11-19T15:00:11+00:00", "service": "web", "src": "127.0.0.1", "method": "POST", "path": "/login", "agent": "curl/8.21.0", "user": "ubuntu", "secret_len": 6, "secret_hash": "61082d3a"}
+{"ts": "2026-11-19T15:00:11+00:00", "service": "web", "src": "127.0.0.1", "method": "GET", "path": "/admin", "agent": "curl/8.21.0"}
+{"ts": "2026-11-19T15:00:11+00:00", "service": "ssh", "src": "127.0.0.1", "client": "SSH-2.0-test-client"}

@@ -1,0 +1,36 @@
+title: Vimal Cybersecurity Portfolio
+description: Projects, skills and learning from WQE7001 Cyber Security, Master of Cybersecurity, Universiti Malaya.
+url: "https://zzvimalzz.github.io"
+baseurl: "/cybersecurity-portfolio"
+lang: en
+author: Vimal
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - scripts
+  - doc
+  - AGENTS.md
+  - CLAUDE.md
+  - skills-lock.json
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og.png
+  - scope:
+      path: "projects"
+    values:
+      layout: project

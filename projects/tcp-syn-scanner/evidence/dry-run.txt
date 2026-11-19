@@ -1,0 +1,19 @@
+$ PYTHONPATH=src python3 -m vscan --scope /scopes/assignment-01-tcp-syn-scan.json --output /tmp/result.json
+PLAN ONLY - no packets will be transmitted (vscan 1.0.0)
+scope:       wqe7002-a1-standard-tcp-syn-scan-v1 (sha256 6c43bad92cd40580...)
+target:      172.28.70.10
+ports:       22, 80, 443, 8080
+interface:   eth0
+rate:        20 packets/s (SYN and RST together)
+attempts:    up to 2 per port per trial (2nd only if no reply to the 1st)
+timeout:     1.5 s after each round
+trials:      1
+maximum SYN probes: 8; one RST follows each valid SYN/ACK
+output:      /tmp/result.json (not written in plan mode)
+probes in send order (our source IP is read from the interface when executing):
+  trial 1 attempt 1: TCP SYN 172.28.70.10:22 sport=40000 seq=4171160549
+  trial 1 attempt 1: TCP SYN 172.28.70.10:80 sport=40001 seq=1592958159
+  trial 1 attempt 1: TCP SYN 172.28.70.10:443 sport=40002 seq=823666662
+  trial 1 attempt 1: TCP SYN 172.28.70.10:8080 sport=40003 seq=2774614458
+  trial 1 attempt 2: TCP SYN 172.28.70.10:22 sport=40004 seq=3560314665
+... (4 more lines)

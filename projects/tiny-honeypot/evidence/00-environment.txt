@@ -1,0 +1,7 @@
+Date            2026-11-19
+Host            Windows 11 host, Kali Linux on WSL 2
+Kernel          Linux 6.18 (WSL 2 kernel)
+Python          Python 3.14.7
+Nmap            Nmap version 7.99 ( https://nmap.org )
+curl            curl 8.21.0
+Tool            honeypot.py, standard library only, binds 127.0.0.1 only

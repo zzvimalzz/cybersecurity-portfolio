@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="dark">
+  {% seo %}
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+  <link rel="preload" href="{{ '/assets/fonts/geist-600.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/geist-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+</head>
+<body>
+  <canvas class="swymble-bg" data-particles data-src="{{ '/assets/images/swymble-large.png' | relative_url }}" aria-hidden="true"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.data.site.profile.name }}</a>
+      <nav class="site-nav" aria-label="Sections">
+        <button class="menu-button" type="button" popovertarget="site-menu" aria-controls="site-menu">Menu</button>
+        <ul id="site-menu" class="site-menu" popover>
+          {% for item in site.data.site.navigation %}
+          <li><a{% if item.button %} class="button"{% endif %} href="{{ '/' | relative_url }}#{{ item.id }}">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© {{ site.time | date: "%Y" }} {{ site.data.site.profile.name }}</p>
+      <p>{{ site.data.site.profile.course }}</p>
+      <a class="swymble-foot" href="https://swymble.com" rel="noopener"><img src="{{ '/assets/images/swymble.png' | relative_url }}" alt="" width="46" height="17"><span class="mono">swymble.com</span></a>
+    </div>
+  </footer>
+  <script type="module" src="{{ '/assets/main.js' | relative_url }}"></script>
+</body>
+</html>

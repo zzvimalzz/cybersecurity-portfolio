@@ -1,0 +1,7 @@
+$ python3 honeypot.py run
+Listening on 127.0.0.1: fake SSH on 2222, fake web login on 8081. Logging to honeypot.jsonl
+
+$ ss -tln | grep -E ':2222|:8081'
+LISTEN 0      100         127.0.0.1:8081      0.0.0.0:*
+LISTEN 0      100         127.0.0.1:2222      0.0.0.0:*
+

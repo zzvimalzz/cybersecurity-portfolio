@@ -1,0 +1,157 @@
+profile:
+  name: Vimal
+  headline: Welcome, I am Vimal, a software engineer learning to defend.
+  status: Master of Cybersecurity · Kuala Lumpur
+  lede: Studying at Universiti Malaya. I build small security tools in Python, test them in my own lab with Nmap and Kali Linux, and write up what I find.
+  chips:
+    - Universiti Malaya
+    - Nmap
+    - Kali Linux
+  programme: Master of Cybersecurity, Universiti Malaya
+  course: WQE7001 Cyber Security
+  authorisation: All projects use my own lab, legal practice platforms or systems I am authorised to test.
+  stats:
+    - value: "52"
+      label: Automated tests on my port scanner
+    - value: 4 of 4
+      label: Scanner results matched by Nmap
+    - value: "2025"
+      label: Google Cybersecurity Certificate
+
+navigation:
+  - { id: about, label: About }
+  - { id: skills, label: Skills }
+  - { id: training, label: Training }
+  - { id: experience, label: Experience }
+  - { id: work, label: Work }
+  - { id: journey, label: Journey }
+  - { id: career, label: Career }
+  - { id: contact, label: Get in touch, button: true }
+
+contact:
+  email: vimal@sentromail.com
+  github: https://github.com/zzvimalzz
+  linkedin: https://www.linkedin.com/in/vimalindrakumar/
+
+scene:
+  items:
+    - { name: mydompet, src: float/mydompet.webp, tile: light }
+    - { name: postgresql, src: float/postgresql.webp, tile: light }
+    - { name: watchpaintdry, src: float/watchpaintdry.webp, tile: light }
+    - { name: chatgpt, src: float/chatgpt.webp, tile: light }
+    - { name: oglets, src: float/oglets.svg, tile: dark }
+    - { name: git, src: icons/git.svg, tile: light }
+    - { name: cortex, src: float/cortex.webp, tile: dark }
+    - { name: mongodb, src: float/mongodb.webp, tile: light }
+    - { name: segi, src: icons/segi.png, tile: light }
+    - { name: threejs, src: float/threejs.webp, tile: light }
+    - { name: aws, src: float/aws.webp, tile: light }
+    - { name: nextjs, src: float/nextjs.webp, tile: light }
+    - { name: nodejs, src: float/nodejs.webp, tile: light }
+    - { name: php, src: float/php.webp, tile: light }
+    - { name: mysql, src: float/mysql.webp, tile: light }
+    - { name: claude, src: float/claude.webp, tile: light }
+    - { name: github, src: float/github.webp, tile: light }
+    - { name: neo4j, src: float/neo4j.webp, tile: light }
+    - { name: kalilinux, src: icons/kalilinux.svg, tile: light }
+    - { name: docker, src: float/docker.webp, tile: light }
+    - { name: um, src: icons/um.png, tile: light }
+    - { name: vite, src: float/vite.webp, tile: light }
+    - { name: pomelo, src: float/pomelo.webp, tile: light }
+    - { name: react, src: float/react.webp, tile: light }
+    - { name: gnubash, src: icons/gnubash.svg, tile: light }
+    - { name: javascript, src: float/javascript.webp, tile: light }
+    - { name: linux, src: float/linux.webp, tile: light }
+    - { name: typescript, src: float/typescript.webp, tile: light }
+    - { name: google, src: icons/google.svg, tile: light }
+    - { name: redis, src: float/redis.webp, tile: light }
+    - { name: python, src: float/python.webp, tile: light }
+    - { name: hackthebox, src: icons/hackthebox.svg, tile: light }
+    - { name: tryhackme, src: icons/tryhackme.svg, tile: light }
+
+certifications:
+  - name: Master of Cybersecurity, Universiti Malaya
+    status: in-progress
+    target: September 2027
+    icon: um
+    ext: png
+  - name: BSc (Hons) Computer Science, Cyber Security, SEGi University
+    status: earned
+    status_text: Completed 2024, Second Class Honours (Upper), CGPA 3.60
+    icon: segi
+    ext: png
+    bleed: true
+  - name: Google Cybersecurity Certificate
+    issuer: Coursera
+    status: earned
+    date: 2025
+    icon: google
+    url: https://coursera.org/share/a3f462e004242edd9a98ab76cfda6779
+  - name: TryHackMe
+    status: practice
+    icon: tryhackme
+  - name: HackTheBox
+    status: practice
+    icon: hackthebox
+
+about: |
+  I'm Vimal, a software engineer based in Kuala Lumpur, Malaysia, and a Master of Cybersecurity student at Universiti Malaya (from October 2026). I hold a BSc (Hons) in Computer Science specialising in Cyber Security from SEGi University and completed the Google Cybersecurity Certificate in 2025. Before the Master's, I built backend systems for enterprise platforms where the data is money-critical and downtime carries an SLA: APIs, batch pipelines, integrations and production incident response. I now run [Swymble](https://swymble.com), a one-person studio and lab where I deliver client builds end to end and make my own products, including offline-first apps that use end-to-end encryption and Ed25519 signing. That mix is why I care about security. I have seen what happens when systems handle real money and real users, and I want to build and defend them properly. I'm studying cybersecurity to move from writing secure code towards testing it as a penetration tester.
+
+experience:
+  - role: Technology consultant
+    org: Through Swymble
+    when: Sep 2026 to now
+    detail: An ongoing engagement taken on through Swymble after I first delivered the client's build.
+  - role: Founder and full stack developer
+    org: Swymble
+    url: https://swymble.com
+    when: Jan 2026 to now
+    detail: A one-person studio for Malaysian small business clients. I scope, design, build, deploy and support production websites, and I build my own products alongside.
+    tags: [TypeScript, React, Next.js, Cloudflare Workers, React Native]
+  - role: Software engineer
+    org: JurisTech
+    when: Apr 2025 to Aug 2026
+    detail: Built and maintained enterprise platforms for money-critical operations. Technical Lead on change delivery, from requirements and backend design to UAT and production deployment. Owned batch pipelines and messaging workflows, and was on the front line for production incidents under SLA.
+    tags: [PHP, SQL, PL/SQL, DB2, MariaDB, MongoDB, JavaScript, Docker, CI/CD, REST APIs]
+  - role: Operations and product management intern
+    org: AIA Malaysia
+    when: Jun to Sep 2024
+    detail: Worked across operations and product management in the final semester of my degree, and built Python and Selenium automation that took manual steps out of recurring processes.
+    tags: [Python, Selenium, Pandas, NumPy, Agile]
+
+career:
+  statement: |
+    My target role is **Penetration Tester**, building on my software engineering background.
+
+    I want to work on systems where security decisions have real consequences, and to be the engineer who finds weaknesses before an attacker does. So far I have practised on my own lab and legal platforms. The gap I need to close next is written penetration test reports.
+  steps:
+    - Complete the Master of Cybersecurity at Universiti Malaya (by September 2027) and use coursework to produce public, evidence-based project write-ups here.
+    - Earn CompTIA Security+ by 31 August 2027.
+    - Practise on TryHackMe and HackTheBox, and publish a written practice penetration test report here for each project.
+
+journey:
+  - title: TCP handshakes, port states and Nmap
+    body: |
+      In the Wireshark handshake lab (9.2.6) and the Nmap lab (9.3.8) I learned to read the SYN, SYN/ACK and ACK flags, and what Nmap concludes from them. WQE7002 Topic 4 made the key point: a scanner does not read a target, it infers from responses.
+
+      I turned that into code when I wrote vscan, a Scapy scanner that sends its own SYN probes. It reports four states: open, closed, filtered by an ICMP reply, and no response. A silent port is never called closed, because silence proves nothing.
+  - title: Scope and defensible evidence
+    body: |
+      WQE7002 Topics 4 to 6 treated authorisation and evidence as part of the technique. A scan needs written scope before the first probe, and a capture only shows what crossed one point at one time.
+
+      I built both ideas into vscan. It refuses any target, port count or rate outside a scope file. My lab run kept a packet capture, the scanner's result and Nmap's own XML, so each claim has a file behind it. This changed how I write: every result in this portfolio links to its evidence. Without that habit, my Nmap comparison would have been a claim instead of a result.
+  - title: What went wrong
+    body: |
+      My capture of the lab scan showed eight reset packets, but vscan reported sending four. I had to find out whether my code or something else sent the extra four.
+
+      Four resets arrived 51 to 55 ms after each SYN/ACK, which matched my rate limit. The other four came under a millisecond after, with IP ID 0 and the Don't Fragment flag, which my packets do not carry. Three repeat runs gave the same split. With my resets switched off, four still appeared, and a plain Nmap scan showed them too. The lab machine's kernel was sending them. My planned fix is to block the kernel's automatic reset during a scan.
+  - title: What I still find challenging
+    body: |
+      Active Directory and Windows network attacks. My lab work so far is Linux hosts and single services, so I have little hands-on practice with domain controllers, authentication and lateral movement. Job postings for penetration testers ask for it, so I treat it as my biggest gap.
+
+      My scanner has a similar gap. Closed, filtered and ICMP results were only tested in simulation, because every port in the lab was open. I plan to practise on TryHackMe and HackTheBox to close both.
+  - title: Improvement goal
+    body: |
+      I will pass CompTIA Security+ by 31 August 2027. I will study with Professor Messer's free course and practice exams, and I will measure success by the exam result: a pass by that date. It closes the first gap I named in my Pathway assignment: no recognised security certification.
+
+      After that, my next target is to publish practice penetration test reports here.

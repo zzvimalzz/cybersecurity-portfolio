@@ -1,0 +1,177 @@
+{
+  "deterministic_digest": "1ecdd598dc9710b441ed4c9a98c886c0b31188c61fdd3876a53ad47dbd94bb6c",
+  "invocation": {
+    "argv": [
+      "vscan",
+      "--scope",
+      "/evidence/scope.json",
+      "--output",
+      "/evidence/result.json",
+      "--execute",
+      "--trials",
+      "1"
+    ]
+  },
+  "notes": [
+    "open = a SYN/ACK with the correct acknowledgement number was received; the scanner then sent RST.",
+    "closed = an RST/ACK with the correct acknowledgement number was received.",
+    "filtered-icmp-unreachable = a relevant ICMP destination-unreachable quoting our probe was received.",
+    "filtered-or-no-response = no relevant reply within the timeout; this does not prove filtering, absence of a service, or that the host is down.",
+    "Replies that match no sent probe are counted in summary.unmatched_packets and never change a state."
+  ],
+  "option": "tcp-syn-scan",
+  "parameters": {
+    "attempts": 2,
+    "interface": "eth0",
+    "on_syn_ack": "send RST",
+    "ports": [
+      22,
+      80,
+      443,
+      8080
+    ],
+    "probe": "TCP SYN, window 1024, MSS 1460, deterministic ISN per (port, trial, attempt)",
+    "rate_pps": 20.0,
+    "source_ip": "172.28.70.2",
+    "source_port_base": 40000,
+    "target": "172.28.70.10",
+    "timeout_seconds": 1.5,
+    "trials": 1
+  },
+  "results": [
+    {
+      "port": 22,
+      "protocol": "tcp",
+      "stable": true,
+      "state": "open",
+      "trial_states": [
+        "open"
+      ],
+      "trials": [
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 1
+        }
+      ]
+    },
+    {
+      "port": 80,
+      "protocol": "tcp",
+      "stable": true,
+      "state": "open",
+      "trial_states": [
+        "open"
+      ],
+      "trials": [
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 1
+        }
+      ]
+    },
+    {
+      "port": 443,
+      "protocol": "tcp",
+      "stable": true,
+      "state": "open",
+      "trial_states": [
+        "open"
+      ],
+      "trials": [
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 1
+        }
+      ]
+    },
+    {
+      "port": 8080,
+      "protocol": "tcp",
+      "stable": true,
+      "state": "open",
+      "trial_states": [
+        "open"
+      ],
+      "trials": [
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 1
+        }
+      ]
+    }
+  ],
+  "schema": "wqe7002-a1-tcp-syn-scan-result-v1",
+  "scope": {
+    "file_name": "scope.json",
+    "scope_id": "wqe7002-a1-standard-tcp-syn-scan-v1",
+    "sha256": "6c43bad92cd4058046ff18fb54e53c551ab7221444cf5696685e5a8225414914"
+  },
+  "summary": {
+    "closed": [],
+    "duplicate_responses": 0,
+    "filtered-icmp-unreachable": [],
+    "filtered-or-no-response": [],
+    "open": [
+      22,
+      80,
+      443,
+      8080
+    ],
+    "rst_sent": 4,
+    "syn_probes_sent": 4,
+    "unmatched_packets": 0,
+    "unstable_ports": []
+  },
+  "timing": {
+    "duration_seconds": 0.395,
+    "end_utc": "2026-11-06T10:15:59.575Z",
+    "first_response_rtt_ms": {
+      "22": [
+        33.146
+      ],
+      "443": [
+        1.284
+      ],
+      "80": [
+        0.959
+      ],
+      "8080": [
+        0.958
+      ]
+    },
+    "start_utc": "2026-11-06T10:15:59.180Z"
+  },
+  "tool": {
+    "name": "vscan",
+    "scapy_version": "2.7.0",
+    "version": "1.0.0"
+  }
+}

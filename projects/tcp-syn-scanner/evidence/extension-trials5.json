@@ -1,0 +1,385 @@
+{
+  "deterministic_digest": "f7521cbf200097399a1a29c8918f1d1db7c91118d8e6959db19f699fbabdbe0a",
+  "invocation": {
+    "argv": [
+      "vscan",
+      "--scope",
+      "/scopes/assignment-01-tcp-syn-scan.json",
+      "--output",
+      "/evidence/extension-trials5.json",
+      "--execute",
+      "--trials",
+      "5"
+    ]
+  },
+  "notes": [
+    "open = a SYN/ACK with the correct acknowledgement number was received; the scanner then sent RST.",
+    "closed = an RST/ACK with the correct acknowledgement number was received.",
+    "filtered-icmp-unreachable = a relevant ICMP destination-unreachable quoting our probe was received.",
+    "filtered-or-no-response = no relevant reply within the timeout; this does not prove filtering, absence of a service, or that the host is down.",
+    "Replies that match no sent probe are counted in summary.unmatched_packets and never change a state."
+  ],
+  "option": "tcp-syn-scan",
+  "parameters": {
+    "attempts": 2,
+    "interface": "eth0",
+    "on_syn_ack": "send RST",
+    "ports": [
+      22,
+      80,
+      443,
+      8080
+    ],
+    "probe": "TCP SYN, window 1024, MSS 1460, deterministic ISN per (port, trial, attempt)",
+    "rate_pps": 20.0,
+    "source_ip": "172.28.70.2",
+    "source_port_base": 40000,
+    "target": "172.28.70.10",
+    "timeout_seconds": 1.5,
+    "trials": 5
+  },
+  "results": [
+    {
+      "port": 22,
+      "protocol": "tcp",
+      "stable": true,
+      "state": "open",
+      "trial_states": [
+        "open",
+        "open",
+        "open",
+        "open",
+        "open"
+      ],
+      "trials": [
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 1
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 2
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 3
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 4
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 5
+        }
+      ]
+    },
+    {
+      "port": 80,
+      "protocol": "tcp",
+      "stable": true,
+      "state": "open",
+      "trial_states": [
+        "open",
+        "open",
+        "open",
+        "open",
+        "open"
+      ],
+      "trials": [
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 1
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 2
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 3
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 4
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 5
+        }
+      ]
+    },
+    {
+      "port": 443,
+      "protocol": "tcp",
+      "stable": true,
+      "state": "open",
+      "trial_states": [
+        "open",
+        "open",
+        "open",
+        "open",
+        "open"
+      ],
+      "trials": [
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 1
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 2
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 3
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 4
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 5
+        }
+      ]
+    },
+    {
+      "port": 8080,
+      "protocol": "tcp",
+      "stable": true,
+      "state": "open",
+      "trial_states": [
+        "open",
+        "open",
+        "open",
+        "open",
+        "open"
+      ],
+      "trials": [
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 1
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 2
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 3
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 4
+        },
+        {
+          "attempts_sent": 1,
+          "conflicting_evidence": false,
+          "duplicate_responses": 0,
+          "icmp_unreachable": [],
+          "rst_received": 0,
+          "rst_sent": 1,
+          "state": "open",
+          "syn_ack_received": 1,
+          "trial": 5
+        }
+      ]
+    }
+  ],
+  "schema": "wqe7002-a1-tcp-syn-scan-result-v1",
+  "scope": {
+    "file_name": "assignment-01-tcp-syn-scan.json",
+    "scope_id": "wqe7002-a1-standard-tcp-syn-scan-v1",
+    "sha256": "6c43bad92cd4058046ff18fb54e53c551ab7221444cf5696685e5a8225414914"
+  },
+  "summary": {
+    "closed": [],
+    "duplicate_responses": 0,
+    "filtered-icmp-unreachable": [],
+    "filtered-or-no-response": [],
+    "open": [
+      22,
+      80,
+      443,
+      8080
+    ],
+    "rst_sent": 20,
+    "syn_probes_sent": 20,
+    "unmatched_packets": 0,
+    "unstable_ports": []
+  },
+  "timing": {
+    "duration_seconds": 2.078,
+    "end_utc": "2026-11-06T10:31:29.814Z",
+    "first_response_rtt_ms": {
+      "22": [
+        33.077,
+        5.292,
+        3.344,
+        2.329,
+        1.063
+      ],
+      "443": [
+        0.901,
+        1.005,
+        0.933,
+        1.567,
+        1.117
+      ],
+      "80": [
+        1.006,
+        4.46,
+        1.302,
+        5.063,
+        0.918
+      ],
+      "8080": [
+        1.026,
+        3.086,
+        5.135,
+        5.975,
+        0.942
+      ]
+    },
+    "start_utc": "2026-11-06T10:31:27.736Z"
+  },
+  "tool": {
+    "name": "vscan",
+    "scapy_version": "2.7.0",
+    "version": "1.0.0"
+  }
+}

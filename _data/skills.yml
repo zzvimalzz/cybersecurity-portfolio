@@ -1,0 +1,96 @@
+focus:
+  - id: linux
+    name: Linux command line
+    level: confident
+    icons: [linux, gnubash]
+    evidence: [tiny-honeypot]
+  - id: network-scanning
+    name: Network scanning with Nmap
+    level: working
+    icons: [kalilinux]
+    evidence: [tcp-syn-scanner, tiny-honeypot]
+  - id: virtualisation
+    name: Virtualisation and lab isolation
+    level: working
+    evidence: [tcp-syn-scanner]
+    note: Docker course lab; VirtualBox host-only lab from the Pathway assignment
+  - id: python
+    name: Python scripting
+    level: confident
+    icons: [python]
+    evidence: [tcp-syn-scanner, tiny-honeypot]
+  - id: git
+    name: Git and GitHub
+    level: confident
+    icons: [git, github]
+    note: This repository's commit history
+  - id: cryptography
+    name: Cryptography fundamentals
+    level: working
+    note: Degree coursework; Ed25519 signing and end-to-end encryption in my own app
+  - id: threat-analysis
+    name: Threat analysis
+    level: working
+    evidence: [tiny-honeypot]
+    note: Degree coursework
+  - id: steganography
+    name: Steganography
+    level: beginner
+    note: Course practicals
+  - id: web-development
+    name: Web and API development (PHP, TypeScript, Python)
+    level: confident
+    icons: [typescript]
+    note: "Professional and personal work (not linked: client confidentiality)"
+
+stack:
+  - group: Languages
+    items:
+      - { name: PHP, level: confident }
+      - { name: TypeScript, level: confident }
+      - { name: JavaScript, level: confident }
+      - { name: Python, level: confident }
+      - { name: SQL and PL/SQL, level: working }
+      - { name: Java, level: working }
+      - { name: C and C++, level: beginner }
+  - group: Web and mobile
+    items:
+      - { name: React, level: confident }
+      - { name: Next.js, level: confident }
+      - { name: Node.js, level: confident }
+      - { name: Vite, level: confident }
+      - { name: Three.js and WebGL, level: working }
+      - { name: React Native and Expo, level: working }
+      - { name: On-device SQLite, level: working }
+      - { name: Offline-first design, level: working }
+  - group: Data
+    items:
+      - { name: PostgreSQL, level: confident }
+      - { name: MySQL and MariaDB, level: confident }
+      - { name: DB2, level: working }
+      - { name: MongoDB, level: working }
+      - { name: Redis, level: working }
+      - { name: Neo4j, level: working }
+  - group: Platform and delivery
+    items:
+      - { name: REST APIs, level: confident }
+      - { name: Batch pipelines, level: confident }
+      - { name: Docker, level: confident }
+      - { name: CI/CD and GitHub Actions, level: working }
+      - { name: AWS, level: working }
+      - { name: Cloudflare Workers, level: working }
+  - group: Security
+    items:
+      - { name: Network security, level: working }
+      - { name: Ed25519 signing, level: working }
+      - { name: Regulatory workflows, level: working }
+  - group: Ways of working
+    items:
+      - { name: Change request delivery, level: confident }
+      - { name: UAT and production deployment, level: confident }
+      - { name: Incident response under SLA, level: working }
+      - { name: Agile, level: working }
+  - group: AI-assisted delivery
+    items:
+      - { name: Claude, level: confident }
+      - { name: ChatGPT, level: working }

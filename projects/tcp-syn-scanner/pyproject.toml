@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vscan"
+version = "1.0.0"
+description = "Scope-enforced Scapy TCP SYN scanner for the WQE7002 course lab"
+requires-python = ">=3.10"
+dependencies = ["scapy==2.7.0"]
+
+[project.scripts]
+vscan = "vscan.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

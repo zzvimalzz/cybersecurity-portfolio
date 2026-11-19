@@ -1,0 +1,51 @@
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+id_rsa*
+id_ed25519*
+secrets.*
+shadow*
+passwd*
+password*.txt
+
+# Jekyll build output and caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+Gemfile.lock
+vendor/
+.bundle/
+
+# Large binaries and VM images (link to them instead of committing)
+*.iso
+*.ova
+*.ovf
+*.vdi
+*.vmdk
+*.qcow2
+*.pcap
+*.pcapng
+*.zip
+*.7z
+
+# Local and OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+.vscode/
+.idea/
+
+# Local AI tooling and private planning (not part of the portfolio)
+.claude/
+.agents/
+.codex/
+skills-lock.json
+AGENTS.md
+CLAUDE.md
+doc/
