@@ -92,4 +92,5 @@ stack:
       - { name: Agile, level: working }
   - group: AI-assisted delivery
     items:
+      - { name: Claude, level: confident }
       - { name: ChatGPT, level: working }

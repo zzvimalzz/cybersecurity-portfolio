@@ -22,6 +22,7 @@ exclude:
   - scripts
   - doc
   - AGENTS.md
+  - CLAUDE.md
   - skills-lock.json
 
 defaults:

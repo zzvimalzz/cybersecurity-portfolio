@@ -29,6 +29,7 @@ Build a TCP SYN port scanner that refuses to scan anything outside a written sco
 | Lab | The course lab (Docker Compose, internal bridge). It is not included here because it belongs to the course and was used unchanged. |
 | Capture | `tcpdump` in the lab container, covering the Scapy run only |
 | Tests | 52 unit tests with a simulated network. Re-run on 2026-11-19 on Kali Linux (WSL 2) with Python 3.14.7: 52 passing. |
+| Assistance | I drafted the design and had Claude Code draft the source, tests and run script. I read and changed the code, ran the tests, ran the lab experiment, and did the extension evaluation. |
 
 ## Method
 

@@ -50,6 +50,7 @@ scene:
     - { name: nodejs, src: float/nodejs.webp, tile: light }
     - { name: php, src: float/php.webp, tile: light }
     - { name: mysql, src: float/mysql.webp, tile: light }
+    - { name: claude, src: float/claude.webp, tile: light }
     - { name: github, src: float/github.webp, tile: light }
     - { name: neo4j, src: float/neo4j.webp, tile: light }
     - { name: kalilinux, src: icons/kalilinux.svg, tile: light }
