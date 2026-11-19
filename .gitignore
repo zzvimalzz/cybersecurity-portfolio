@@ -40,12 +40,3 @@ desktop.ini
 *.tmp
 .vscode/
 .idea/
-
-# Local AI tooling and private planning (not part of the portfolio)
-.claude/
-.agents/
-.codex/
-skills-lock.json
-AGENTS.md
-CLAUDE.md
-doc/

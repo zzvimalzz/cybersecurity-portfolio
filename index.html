@@ -14,7 +14,6 @@ layout: default
 {% endfor %}
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap" data-enter>
-    <p class="hero-status mono">{{ profile.status }}</p>
     {% assign words = profile.headline | split: " " %}
     <h1 id="hero-title">{% for word in words %}<span>{{ word }}</span>{% unless forloop.last %}&#32;{% endunless %}{% endfor %}</h1>
     <p class="hero-lede">{{ lede }}</p>
@@ -117,6 +116,26 @@ layout: default
         <p class="training-status mono">In progress, target {{ cert.target }}</p>
         {% endif %}
         <p class="training-link">{% if cert.url %}<a class="draw-link mono" href="{{ cert.url }}">Verify ↗</a>{% endif %}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="education" class="section" aria-labelledby="education-title">
+  <div class="wrap">
+    <h2 id="education-title">Education</h2>
+    <ul class="training">
+      {% for item in site_data.education %}
+      <li class="training-row">
+        <span class="icons" aria-hidden="true">{% if item.icon %}{% assign ext = item.ext | default: "svg" %}<img{% if item.bleed %} class="bleed"{% endif %} src="{{ '/assets/images/icons/' | append: item.icon | append: '.' | append: ext | relative_url }}" alt="" width="40" height="40">{% endif %}</span>
+        <h3>{{ item.name }}</h3>
+        {% if item.status_text %}
+        <p class="training-status mono">{{ item.status_text }}</p>
+        {% else %}
+        <p class="training-status mono">In progress, target {{ item.target }}</p>
+        {% endif %}
+        <p class="training-link"></p>
       </li>
       {% endfor %}
     </ul>

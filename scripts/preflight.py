@@ -9,8 +9,8 @@ ROOT = Path(__file__).resolve().parent.parent
 SELF = Path(__file__).resolve()
 TODO = "TODO(vimal)"
 TEXT_SUFFIXES = {".md", ".yml", ".yaml", ".html", ".css", ".js", ".json", ".txt", ".xml", ".py", ".svg", ".rb", ".gitignore"}
-LOCAL_ONLY_PREFIXES = ("doc/", ".claude/", ".agents/", ".codex/")
-LOCAL_ONLY_FILES = ("AGENTS.md", "CLAUDE.md", "skills-lock.json")
+LOCAL_ONLY_PREFIXES = ("doc/", ".agents/", ".codex/")
+LOCAL_ONLY_FILES = ("AGENTS.md", "skills-lock.json")
 PROJECT_HEADINGS = [
     "Objective",
     "Environment and tools",
