@@ -56,8 +56,6 @@ Build a small decoy that looks like an SSH server and a staff login page, record
 
 Nmap treats the decoy as a real server, and its own probe paths appear in the log, so a defender sees what the scanner tried. The summary also shows the limit of the approach: every event came from `127.0.0.1`, so the source-based rules say little until the decoy sits on a network with other machines.
 
-The screenshots come from a second run of the same commands on 2026-11-22, which again produced 21 events and 8 login attempts. The text evidence above is from the first run on 2026-11-19. The log and summary screenshots read the log from that second run, and the login-page image is a render of the live page without a browser frame.
-
 <!-- figures -->
 
 ## What I would do differently
