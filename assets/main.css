@@ -517,6 +517,107 @@
 }
 
 @layer components {
+  .pins {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    pointer-events: none;
+  }
+
+  .pins li {
+    position: absolute;
+    inset-inline-start: var(--x);
+    inset-block-start: var(--y);
+    inline-size: var(--k);
+    margin: calc(var(--k) / -2) 0 0 calc(var(--k) / -2);
+  }
+
+  .pins li:nth-child(1) {
+    --x: 11%;
+    --y: 26%;
+    --k: 5rem;
+  }
+
+  .pins li:nth-child(2) {
+    --x: 89%;
+    --y: 68%;
+    --k: 4.25rem;
+    --i: 4;
+  }
+
+  .pin {
+    position: relative;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    border-radius: 26%;
+    background: var(--icon-ground);
+    box-shadow: 0 1rem 2rem -1rem #000;
+    pointer-events: auto;
+  }
+
+  .pin img {
+    inline-size: 56%;
+    block-size: 56%;
+  }
+
+  .pin-name {
+    position: absolute;
+    inset-block-start: calc(100% + 0.6rem);
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-s);
+    background: var(--surface-2);
+    box-shadow: inset 0 0 0 1px var(--line-2);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .pin:is(:hover, :focus-visible) {
+    scale: 1.12;
+  }
+
+  .pin:is(:hover, :focus-visible) .pin-name {
+    opacity: 1;
+  }
+
+  @media (max-width: 1100px) {
+    .pins li:nth-child(1) {
+      --x: 14%;
+      --y: 17%;
+      --k: 4rem;
+    }
+
+    .pins li:nth-child(2) {
+      --x: 86%;
+      --y: 87%;
+      --k: 4rem;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .pins li:is(:nth-child(1), :nth-child(2)) {
+      --k: 3.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .pin {
+      animation: bob 7s ease-in-out infinite alternate;
+      animation-delay: calc(var(--i, 1) * -0.9s);
+      transition: scale var(--dur-med) var(--ease-out);
+    }
+
+    .pin-name {
+      transition: opacity var(--dur-fast) var(--ease-out);
+    }
+  }
+
   .swymble-foot {
     display: inline-flex;
     align-items: center;
@@ -657,6 +758,7 @@
 
 @layer sections {
   .hero {
+    position: relative;
     display: grid;
     place-items: center;
     min-block-size: 100svh;
