@@ -93,6 +93,7 @@
     --bg: #050505;
     --surface: #0f0f0f;
     --surface-2: #161616;
+    --terminal: #1e1e1e;
     --ink: #f2f2f2;
     --ink-soft: #cfcfcf;
     --muted: #8b8b8b;
@@ -321,6 +322,9 @@
 
   .prose > .figures {
     grid-column: full;
+    justify-self: center;
+    inline-size: min(100%, 56rem);
+    margin-block: var(--space-xl);
   }
 
   .prose > * + * {
@@ -631,7 +635,6 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-l);
-    margin: 0;
     padding: 0;
     list-style: none;
   }
@@ -645,7 +648,8 @@
     display: block;
     overflow: clip;
     border-radius: var(--radius-m);
-    background: var(--surface);
+    block-size: 100%;
+    background: var(--terminal);
     box-shadow: inset 0 0 0 1px var(--line-2), 0 1.5rem 3rem -1.5rem #000;
     cursor: zoom-in;
   }
