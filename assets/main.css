@@ -94,6 +94,7 @@
     --surface: #0f0f0f;
     --surface-2: #161616;
     --terminal: #1e1e1e;
+    --terminal-black: #0c0c0c;
     --ink: #f2f2f2;
     --ink-soft: #cfcfcf;
     --muted: #8b8b8b;
@@ -652,6 +653,10 @@
     background: var(--terminal);
     box-shadow: inset 0 0 0 1px var(--line-2), 0 1.5rem 3rem -1.5rem #000;
     cursor: zoom-in;
+  }
+
+  .figure-black a {
+    background: var(--terminal-black);
   }
 
   .figure img {
