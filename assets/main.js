@@ -162,4 +162,61 @@ function particles() {
   logo.src = canvas.dataset.src;
 }
 
-for (const init of [activeSection, navMenu, copyEmail, particles]) init();
+function lightbox() {
+  const links = [...document.querySelectorAll("a[data-lightbox]")];
+  if (!links.length || typeof HTMLDialogElement === "undefined") return;
+
+  const dialog = document.createElement("dialog");
+  dialog.className = "lightbox";
+  dialog.setAttribute("aria-label", "Screenshot viewer");
+  dialog.innerHTML =
+    '<div class="lightbox-body"><img alt="">' +
+    '<div class="lightbox-bar">' +
+    '<button type="button" data-step="-1" aria-label="Previous screenshot">←</button>' +
+    '<span class="lightbox-count mono" aria-live="polite"></span>' +
+    '<button type="button" data-step="1" aria-label="Next screenshot">→</button>' +
+    '<button type="button" data-close>Close</button>' +
+    "</div></div>";
+  document.body.append(dialog);
+
+  const image = dialog.querySelector("img");
+  const count = dialog.querySelector(".lightbox-count");
+  const steppers = dialog.querySelectorAll("[data-step]");
+  let current = 0;
+  let opener = null;
+
+  const show = (index) => {
+    current = (index + links.length) % links.length;
+    image.src = links[current].href;
+    image.alt = links[current].querySelector("img")?.alt ?? "";
+    count.textContent = `${current + 1} / ${links.length}`;
+  };
+
+  steppers.forEach((button) => (button.hidden = links.length < 2));
+
+  for (const link of links) {
+    link.addEventListener("click", (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.button) return;
+      event.preventDefault();
+      opener = link;
+      show(links.indexOf(link));
+      dialog.showModal();
+    });
+  }
+
+  dialog.addEventListener("click", (event) => {
+    const step = event.target.closest("[data-step]");
+    if (step) show(current + Number(step.dataset.step));
+    else if (event.target.closest("[data-close]") || !event.target.closest(".lightbox-body, button")) dialog.close();
+  });
+
+  dialog.addEventListener("keydown", (event) => {
+    if (links.length < 2) return;
+    if (event.key === "ArrowLeft") show(current - 1);
+    if (event.key === "ArrowRight") show(current + 1);
+  });
+
+  dialog.addEventListener("close", () => opener?.focus());
+}
+
+for (const init of [activeSection, navMenu, copyEmail, particles, lightbox]) init();
