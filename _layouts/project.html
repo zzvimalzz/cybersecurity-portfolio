@@ -29,8 +29,9 @@ layout: default
       <a class="button button-ghost" href="{{ site.data.site.contact.github }}/cybersecurity-portfolio/tree/main{{ page.url }}">Source on GitHub ↗</a>
     </p>
   </header>
+  {% capture figures_html %}{% if page.figures %}<ul class="figures">{% for figure in page.figures %}<li class="figure{% if figure.wide %} figure-wide{% endif %}{% if figure.tone %} figure-{{ figure.tone }}{% endif %}"><a href="{{ page.url | append: figure.src | relative_url }}" data-lightbox><img src="{{ page.url | append: figure.src | relative_url }}" alt="{{ figure.alt }}" width="{{ figure.w }}" height="{{ figure.h }}" loading="lazy" decoding="async"></a></li>{% endfor %}</ul>{% endif %}{% endcapture %}
   <div class="wrap prose">
-    {{ content }}
+    {{ content | replace: "<!-- figures -->", figures_html }}
   </div>
   <nav class="wrap project-nav" aria-label="Projects">
     <a href="{{ '/' | relative_url }}#work">All projects</a>

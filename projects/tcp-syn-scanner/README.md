@@ -12,6 +12,11 @@ shot: |
   nmap    4 of 4 agree
   tests   52 passing
 shot_highlight: "4 of 4 agree"
+figures:
+  - { src: evidence/screenshots/lab-run.png, w: 1760, h: 976, wide: true, alt: "Terminal output of the lab experiment: the Scapy scan finds four open ports, and Nmap lists 22, 80, 443 and 8080 as open with a SYN/ACK reason." }
+  - { src: evidence/screenshots/packet-list.png, w: 1760, h: 868, alt: "Packet list of the capture: an ARP lookup, then a SYN, a SYN/ACK and two RST packets for each of ports 22, 80, 443 and 8080." }
+  - { src: evidence/screenshots/dry-run.png, w: 1760, h: 796, alt: "Dry run that prints the scope, the target 172.28.70.10, the four ports, 20 packets per second and the planned probes, with nothing transmitted." }
+  - { src: evidence/screenshots/unit-tests.png, w: 1760, h: 328, wide: true, alt: "Unit test run that reports 52 tests and OK." }
 ---
 
 ## Objective
@@ -28,7 +33,7 @@ Build a TCP SYN port scanner that refuses to scan anything outside a written sco
 | Comparison tool | Nmap 7.94, used only after the scan. The scanner never calls it. |
 | Lab | The course lab (Docker Compose, internal bridge). It is not included here because it belongs to the course and was used unchanged. |
 | Capture | `tcpdump` in the lab container, covering the Scapy run only |
-| Tests | 52 unit tests with a simulated network. Re-run on 2026-11-19 on Kali Linux (WSL 2) with Python 3.14.7: 52 passing. |
+| Tests | 52 unit tests with a simulated network. Re-run on 19/11/2026 on Kali Linux (WSL 2) with Python 3.14.7: 52 passing. |
 | Assistance | I drafted the design and had Claude Code draft the source, tests and run script. I read and changed the code, ran the tests, ran the lab experiment, and did the extension evaluation. |
 
 ## Method
@@ -56,7 +61,9 @@ Install and try it: `pip install -r requirements.txt`, then step 2 and step 3. S
 
 Matching replies by address, ports and acknowledgement number (`ack == ISN + 1`), not just by port, is what let the scanner ignore the kernel's extra RSTs without miscounting. The Nmap comparison is the real check: it is an independent tool that reached the same four states.
 
-Evidence notes: the original lab files were hashed with `sha256sum` (the hashes are in the [lab run](evidence/lab-run.txt)). The copies here have the container's MAC address redacted, so their hashes differ from the originals. The raw `.pcap` is not published, because the repository ignores capture files. The packet list is the text output from reading it.
+Evidence notes: the original lab files were hashed with `sha256sum` (the hashes are in the [lab run](evidence/lab-run.txt)). The copies here have the container's MAC address redacted, so their hashes differ from the originals. The raw `.pcap` is not published, because the repository ignores capture files. The packet list is the text output from reading it. The screenshots are the terminal captures from my report with the Windows user path and the MAC address redacted.
+
+<!-- figures -->
 
 ## What I would do differently
 

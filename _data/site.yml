@@ -128,7 +128,7 @@ career:
     I want to work on systems where security decisions have real consequences, and to be the engineer who finds weaknesses before an attacker does. So far I have practised on my own lab and legal platforms. The gap I need to close next is written penetration test reports.
   steps:
     - Complete the Master of Cybersecurity at Universiti Malaya (by September 2027) and use coursework to produce public, evidence-based project write-ups here.
-    - Earn CompTIA Security+ by 31 August 2027.
+    - Earn CompTIA Security+ by 31/08/2027.
     - Practise on TryHackMe and HackTheBox, and publish a written practice penetration test report here for each project.
 
 journey:
@@ -154,6 +154,6 @@ journey:
       My scanner has a similar gap. Closed, filtered and ICMP results were only tested in simulation, because every port in the lab was open. I plan to practise on TryHackMe and HackTheBox to close both.
   - title: Improvement goal
     body: |
-      I will pass CompTIA Security+ by 31 August 2027. I will study with Professor Messer's free course and practice exams, and I will measure success by the exam result: a pass by that date. It closes the first gap I named in my Pathway assignment: no recognised security certification.
+      I will pass CompTIA Security+ by 31/08/2027. I will study with Professor Messer's free course and practice exams, and I will measure success by the exam result: a pass by that date. It closes the first gap I named in my Pathway assignment: no recognised security certification.
 
       After that, my next target is to publish practice penetration test reports here.
