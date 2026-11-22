@@ -12,6 +12,13 @@ shot: |
              8081  http  Apache 2.4.41
   log        21 events, 8 login attempts
 shot_highlight: "8 login attempts"
+figures:
+  - { src: evidence/screenshots/start.png, w: 842, h: 405, wide: true, tone: black, alt: "Two terminal panes: the honeypot reports it is listening on 127.0.0.1 for fake SSH on 2222 and a fake web login on 8081, and ss shows both ports bound to 127.0.0.1." }
+  - { src: evidence/screenshots/nmap.png, w: 948, h: 938, tone: black, alt: "Nmap version scan of ports 2222 and 8081 reporting OpenSSH 8.9p1 and Apache 2.4.41, then a scan of the WSL address showing both ports filtered, with the honeypot logging each probe above." }
+  - { src: evidence/screenshots/probes.png, w: 938, h: 852, tone: black, alt: "curl fetching the login page, eight login posts that each return 401, a request for /admin that returns 404 and a netcat connection that receives the fake SSH banner, with the matching log events above." }
+  - { src: evidence/screenshots/log.png, w: 1095, h: 348, wide: true, tone: black, alt: "The log holds 21 lines. The first events show the Nmap probes, and the login lines record the user name, the secret length of 6 and a short hash." }
+  - { src: evidence/screenshots/summary.png, w: 1095, h: 198, wide: true, tone: black, alt: "The summary reports 21 events from one source, flags a scan across both services as T1595 and 8 login attempts as T1110, and lists the usernames, paths and user agents." }
+  - { src: evidence/screenshots/login-page.png, w: 1520, h: 250, wide: true, alt: "The fake staff login page served at 127.0.0.1:8081, with a Staff portal heading, User and Pass fields and a Sign in button." }
 ---
 
 ## Objective
@@ -48,6 +55,10 @@ Build a small decoy that looks like an SSH server and a staff login page, record
 | Login attempts record the user name, the length of the secret and the first 8 characters of its SHA-256, never the secret itself. | [log](evidence/04-honeypot-log.txt) | Low. Even the short hash lets me spot a reused guess without storing it. | Drop the hash if reuse tracking is not needed. |
 
 Nmap treats the decoy as a real server, and its own probe paths appear in the log, so a defender sees what the scanner tried. The summary also shows the limit of the approach: every event came from `127.0.0.1`, so the source-based rules say little until the decoy sits on a network with other machines.
+
+The screenshots come from a second run of the same commands on 2026-11-22, which again produced 21 events and 8 login attempts. The text evidence above is from the first run on 2026-11-19. The log and summary screenshots read the log from that second run, and the login-page image is a render of the live page without a browser frame.
+
+<!-- figures -->
 
 ## What I would do differently
 
